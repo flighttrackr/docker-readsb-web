@@ -19,8 +19,8 @@ jobs:
     uses: flighttrackr/workflows/.github/workflows/build-with-upstream.yml@main
     with:
       hub_repo: flighttrackr
-      hub_image: TPL_PROJECT
+      hub_image: readsb-web
       image_authors: Dennis Neufeld <git@dneufeld.net>
-      image_title: TPL_PROJECT
-      image_description: Dockerized TPL_PROJECT
+      image_title: readsb-web
+      image_description: Dockerized Readsb Web
       image_licenses: MIT

@@ -1,8 +1,8 @@
-# TPL_PROJECT
+# Readsb Web
 
-[![Release](https://github.com/flighttrackr/docker-TPL_PROJECT/actions/workflows/release.yml/badge.svg)](https://github.com/flighttrackr/docker-TPL_PROJECT/actions/workflows/release.yml)
+[![Release](https://github.com/flighttrackr/docker-readsb-web/actions/workflows/release.yml/badge.svg)](https://github.com/flighttrackr/docker-readsb-web/actions/workflows/release.yml)
 
-This project makes [TPL_AUTHOR]'s [TPL_PROJECT] software available as a Docker image.
+This project makes our own software readsb-web available as a Docker image.
 
 Due to the API limitations of Docker Hub, we use GitHub as container image registry.
 
@@ -23,16 +23,20 @@ We have other Flighttracking projects, check our [GitHub profile].
 ```shell
 docker run \
   -it --rm \
-  ghcr.io/flighttrackr/TPL_PROJECT:latest
+  ghcr.io/flighttrackr/readsb-web:latest
 ```
 
 ## Environment variables
 
 | Environment variable | Default | Description |
 | :- | :- | :- |
-| | | |
+| READSB_HOST | readsb | Readsb Hostname/IP address |
+| READSB_PORT | 8042 | Readsb HTTP Port |
+| PAGE_TITLE | Readsb Web | Webpage title |
+| REFRESH_RATE | 250 | Refresh rate in ms |
+| CENTER_LAT | 45.0 | Center latitude |
+| CENTER_LNG | 9.0 | Center longitude |
+| CENTER_RADIUS | 500 | Center radius |
 
 
-[TPL_AUTHOR]: https://github.com/TPL_AUTHOR
-[TPL_PROJECT]: https://github.com/TPL_AUTHOR/TPL_PROJECT
 [GitHub profile]: https://github.com/flighttrackr
