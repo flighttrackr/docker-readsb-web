@@ -23,7 +23,7 @@ RUN find /app -type d -exec chmod 755 {} \; && \
 
 
 # Release
-FROM nginx:1.21-alpine AS release
+FROM nginx:1.23.0-alpine AS release
 
 # Workdir
 WORKDIR /app
