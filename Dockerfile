@@ -7,15 +7,16 @@ WORKDIR /app
 RUN apk add --no-cache findutils
 
 # Get Leaflet
-ARG LEAFLET_URL="https://github.com/Leaflet/Leaflet/archive/refs/tags/v1.7.1.tar.gz"
-RUN mkdir -p leaflet assets/leaflet && \
-    wget -O - "$LEAFLET_URL" | tar -xvzf - --strip 1 -C /app/leaflet
+ARG LEAFLET_URL="https://github.com/Leaflet/Leaflet/releases/download/v1.9.3/leaflet.zip"
+RUN wget -O /tmp/leaflet.zip "$LEAFLET_URL" && \
+    unzip /tmp/leaflet.zip -d /tmp/leaflet
 
-RUN cp -r \
-    leaflet/dist/leaflet.css \
-    leaflet/dist/leaflet.js \
-    leaflet/dist/leaflet.js.map \
-    leaflet/dist/images/ \
+RUN mkdir -p assets/leaflet && \
+    cp -r \
+    /tmp/leaflet/leaflet.css \
+    /tmp/leaflet/leaflet.js \
+    /tmp/leaflet/leaflet.js.map \
+    /tmp/leaflet/images/ \
     assets/leaflet/
 
 RUN find /app -type d -exec chmod 755 {} \; && \
