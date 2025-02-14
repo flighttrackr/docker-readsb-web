@@ -1,5 +1,5 @@
 # Builder
-FROM alpine:3.21.2 AS builder
+FROM alpine:3.21.3 AS builder
 
 WORKDIR /app
 
